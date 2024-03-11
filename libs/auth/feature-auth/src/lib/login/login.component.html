@@ -1,0 +1,24 @@
+<div class="login">
+  <h2 class="login_header">Login</h2>
+  <h5 class="login_sub-header">Please authenticate using one of the two options.</h5>
+
+  <p-button (click)="submit.emit()" label="Login with Ping Federate" class="login_button"></p-button>
+
+  <p-divider align="center" type="solid" class="login_divider">
+    <b>OR</b>
+  </p-divider>
+
+  <div class="login_input">
+    <label for="username">Username</label>
+    <input pInputText id="username" aria-describedby="username-help" />
+  </div>
+
+  <div class="login_input">
+    <label for="password">Password</label>
+    <input pInputText id="password" aria-describedby="username-help" />
+    <!-- <p-password id="password" aria-describedby="username-help" [toggleMask]="true"></p-password> -->
+  </div>
+
+  <p-button label="Login" class="login_button login_button--submit"></p-button>
+
+</div>

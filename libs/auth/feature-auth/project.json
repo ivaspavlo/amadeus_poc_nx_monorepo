@@ -1,0 +1,28 @@
+{
+  "name": "feature-auth",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/auth/feature-auth/src",
+  "prefix": "a5s",
+  "tags": ["feature"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/auth/feature-auth/ng-package.json",
+        "inlineStyleLanguage": "scss",
+        "extractCss": true
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/auth/feature-auth/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/auth/feature-auth/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

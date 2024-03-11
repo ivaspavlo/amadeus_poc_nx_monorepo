@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@amadeus/api-types": ["libs/core/api-types/src/index.ts"],
+      "@amadeus/assets": ["libs/ui/assets/src/index.ts"],
+      "@amadeus/co-components": ["libs/co/co-components/src/index.ts"],
+      "@amadeus/components": ["libs/ui/components/src/index.ts"],
+      "@amadeus/data-access": ["libs/auth/data-access/src/index.ts"],
+      "@amadeus/feature-auth": ["libs/auth/feature-auth/src/index.ts"],
+      "@amadeus/feature-search": ["libs/search/feature-search/src/index.ts"],
+      "@amadeus/fi-components": ["libs/fi/fi-components/src/index.ts"],
+      "@amadeus/http-client": ["libs/core/http-client/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

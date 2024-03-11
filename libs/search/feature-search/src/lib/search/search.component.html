@@ -1,0 +1,14 @@
+<div class="search">
+  <h2 class="search_header">Search</h2>
+  <h5 class="search_sub-header">Please type in the search field.</h5>
+
+  <div class="search_input">
+    <input pInputText id="search-field" />
+  </div>
+
+  <p-button (click)="search.emit()" label="Submit" class="search_button"></p-button>
+
+  <div class="search_results">
+    <ng-content></ng-content>
+  </div>
+</div>

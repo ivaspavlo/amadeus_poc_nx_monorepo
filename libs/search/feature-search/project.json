@@ -1,0 +1,26 @@
+{
+  "name": "feature-search",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/search/feature-search/src",
+  "prefix": "amadeus",
+  "tags": ["feature"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/search/feature-search/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/search/feature-search/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/search/feature-search/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

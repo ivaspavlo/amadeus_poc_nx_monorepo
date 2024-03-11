@@ -1,0 +1,26 @@
+{
+  "name": "data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/auth/data-access/src",
+  "prefix": "a5s",
+  "tags": ["feature"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/auth/data-access/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/auth/data-access/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/auth/data-access/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

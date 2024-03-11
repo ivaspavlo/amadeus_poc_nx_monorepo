@@ -1,0 +1,26 @@
+{
+  "name": "fi-components",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/fi/fi-components/src",
+  "prefix": "a5s",
+  "tags": ["feature-fi"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/fi/fi-components/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/fi/fi-components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/fi/fi-components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

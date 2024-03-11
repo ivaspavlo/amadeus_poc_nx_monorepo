@@ -1,0 +1,26 @@
+{
+  "name": "co-components",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/co/co-components/src",
+  "prefix": "a5s",
+  "tags": ["feature-co"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/co/co-components/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/co/co-components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/co/co-components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

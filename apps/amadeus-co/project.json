@@ -1,0 +1,81 @@
+{
+  "name": "amadeus-co",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "amadeus",
+  "sourceRoot": "apps/amadeus-co/src",
+  "tags": ["amadeus-co"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/amadeus-co",
+        "index": "apps/amadeus-co/src/index.html",
+        "main": "apps/amadeus-co/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/amadeus-co/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/amadeus-co/src/favicon.ico",
+          "apps/amadeus-co/src/assets"
+        ],
+        "styles": ["apps/amadeus-co/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/ui/assets/src/lib/styles"]
+        },
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "amadeus-co:build:production"
+        },
+        "development": {
+          "buildTarget": "amadeus-co:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "amadeus-co:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "amadeus-co:build"
+      }
+    }
+  }
+}

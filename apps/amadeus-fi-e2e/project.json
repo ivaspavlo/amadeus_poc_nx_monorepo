@@ -1,0 +1,26 @@
+{
+  "name": "amadeus-fi-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/amadeus-fi-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/amadeus-fi-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "amadeus-fi:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "amadeus-fi:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "amadeus-fi:serve-static"
+        }
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["amadeus-fi"]
+}

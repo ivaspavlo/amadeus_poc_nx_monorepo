@@ -1,0 +1,9 @@
+{
+  "name": "components",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui/components/src",
+  "prefix": "a5s",
+  "tags": ["ui"],
+  "projectType": "library",
+  "targets": {}
+}
